@@ -1,0 +1,36 @@
+name = "ReNchi-siren"
+main = "build/worker/shim.mjs"
+compatibility_date = "2024-05-23"
+minify = true
+workers_dev = true
+
+
+routes = [
+
+  { pattern = "ryuseii.dpdns.org", custom_domain = true },
+  { pattern = "ava.game.naver.com.ryuseii.dpdns.org", custom_domain = true },
+  { pattern = "quiz.int.vidio.com.ryuseii.dpdns.org", custom_domain = true },
+  { pattern = "graph.instagram.com.ryuseii.dpdns.org", custom_domain = true },
+  { pattern = "help.viu.com.ryuseii.dpdns.org", custom_domain = true },
+  { pattern = "support.zoom.us.ryuseii.dpdns.org", custom_domain = true },
+  { pattern = "cache.netflix.com.ryuseii.dpdns.org", custom_domain = true },
+  { pattern = "graph.facebook.com.ryuseii.dpdns.org", custom_domain = true },
+  { pattern = "dogseechew.com.ryuseii.dpdns.org", custom_domain = true },
+]
+
+[[kv_namespaces]]
+binding = "SIREN"
+id = "859bf88907e44c5b80eeb838d8f06ffb"
+
+[build]
+command = "cargo install -q worker-build && worker-build --release"
+
+[env.dev]
+build = { command = "cargo install -q worker-build && worker-build --dev" }
+
+[vars]
+UUID = "bbbbbbbb-cccc-4ddd-eeee-ffffffffffff"
+MAIN_PAGE_URL = "https://raw.githubusercontent.com/AFRcloud/AFR-Cloud/refs/heads/master/web/index.html"
+SUB_PAGE_URL = "https://raw.githubusercontent.com/AFRcloud/AFR-Cloud/refs/heads/master/web/sub.html"
+LINK_PAGE_URL = "https://raw.githubusercontent.com/AFRcloud/AFR-Cloud/refs/heads/master/web/link.html"
+CONVERTER_PAGE_URL = "https://raw.githubusercontent.com/AFRcloud/AFR-Cloud/refs/heads/master/web/converter.html"
