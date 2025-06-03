@@ -86,6 +86,6 @@ document.addEventListener("DOMContentLoaded", () => {
   // Add data-text attribute for text shadow effect
   const profileName = document.querySelector(".profile-name")
   if (profileName) {
-    profileName.setAttribute("data-text", "Inconigto Mode")
+    profileName.setAttribute("data-text", "NeOxide")
   }
 })

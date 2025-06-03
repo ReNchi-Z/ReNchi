@@ -860,7 +860,7 @@ proxies:\n`
 }
 
 function generateNekoboxConfig(parsedLinks) {
-  let config = `##INCONIGTO-MODE##
+  let config = `##NeOxide##
 {
   "dns": {
     "final": "dns-final",

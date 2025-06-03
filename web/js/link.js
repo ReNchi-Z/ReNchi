@@ -11,13 +11,13 @@ let filteredProxyList = []
 let selectedProxy = null
 const defaultProxyUrl = "https://raw.githubusercontent.com/AFRcloud/ProxyList/refs/heads/main/ProxyList.txt"
 
-const serverDomains = ["stbwrt.web.id"]
+const serverDomains = ["ryuseii.dpdns.org"]
 let selectedServerDomain = serverDomains[0] // Default to first domain
 const defaultUUID = "bbbbbbbb-cccc-4ddd-eeee-ffffffffffff"
 const itemsPerPage = 10
 let currentPage = 1
 
-const pathTemplate = "/Inconigto-Mode/{ip}-{port}"
+const pathTemplate = "/NeOxide/{ip}-{port}"
 
 // Array of bug options for easy management
 const bugOptions = [
