@@ -61,7 +61,7 @@ async fn main(req: Request, env: Env, _: Context) -> Result<Response> {
         .on_async("/link", link)
         .on_async("/converter", converter)
         .on_async("/:proxyip", tunnel)
-        .on_async("/Inconigto-Mode/:proxyip", tunnel)
+        .on_async("/NeOxide/:proxyip", tunnel)
         .run(req, env)
         .await
 }
