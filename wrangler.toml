@@ -11,10 +11,11 @@ routes = [
   { pattern = "ava.game.naver.com.ryuseii.dpdns.org", custom_domain = true },
   { pattern = "quiz.int.vidio.com.ryuseii.dpdns.org", custom_domain = true },
   { pattern = "graph.instagram.com.ryuseii.dpdns.org", custom_domain = true },
-  { pattern = "help.viu.com.ryuseii.dpdns.org", custom_domain = true },
+  { pattern = "zaintest.vuclip.com.ryuseii.dpdns.org", custom_domain = true },
   { pattern = "support.zoom.us.ryuseii.dpdns.org", custom_domain = true },
   { pattern = "cache.netflix.com.ryuseii.dpdns.org", custom_domain = true },
   { pattern = "graph.facebook.com.ryuseii.dpdns.org", custom_domain = true },
+  { pattern = "help.viu.com.ryuseii.dpdns.org", custom_domain = true },
   { pattern = "dogseechew.com.ryuseii.dpdns.org", custom_domain = true },
 ]
 
