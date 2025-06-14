@@ -2,6 +2,7 @@ name: cf workers
 
 on:
   workflow_dispatch:
+
   push:
     branches:
       - master
@@ -14,18 +15,8 @@ jobs:
     runs-on: ubuntu-latest
     environment: cf
     steps:
-      - name: Checkout repository
-        uses: actions/checkout@v4
-
-      - name: Setup Node.js (needed for wrangler)
-        uses: actions/setup-node@v4
+      - uses: actions/checkout@v4
+      - name: deploy
+        uses: cloudflare/wrangler-action@v3
         with:
-          node-version: '20'
-
-      - name: Install wrangler
-        run: npm install -g wrangler
-
-      - name: Publish to Cloudflare Workers
-        run: wrangler deploy
-        env:
-          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
