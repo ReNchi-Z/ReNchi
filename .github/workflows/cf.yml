@@ -17,25 +17,15 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
 
-      - name: Setup Rust
-        uses: actions-rs/toolchain@v1
+      - name: Setup Node.js (needed for wrangler)
+        uses: actions/setup-node@v4
         with:
-          toolchain: stable
-          override: true
+          node-version: '20'
 
-      - name: Add wasm target
-        run: rustup target add wasm32-unknown-unknown
+      - name: Install wrangler
+        run: npm install -g wrangler
 
-      - name: Install latest worker-build
-        run: cargo install --force worker-build
-
-      - name: Build worker
-        run: worker-build --release
-
-      - name: Install Wrangler 4.x
-        run: npm install -g wrangler@4
-
-      - name: Deploy to Cloudflare
-        run: wrangler deploy --env production
+      - name: Publish to Cloudflare Workers
+        run: wrangler deploy
         env:
-          CF_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
