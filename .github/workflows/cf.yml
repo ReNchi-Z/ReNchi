@@ -2,7 +2,6 @@ name: cf workers
 
 on:
   workflow_dispatch:
-
   push:
     branches:
       - master
@@ -16,7 +15,20 @@ jobs:
     environment: cf
     steps:
       - uses: actions/checkout@v4
-      - name: deploy
+      
+      - name: Install Rust toolchain
+        uses: actions-rs/toolchain@v1
+        with:
+          toolchain: stable
+          override: true
+
+      - name: Install worker-build
+        run: cargo install worker-build --version 0.3.0 || true
+
+      - name: Install Wrangler CLI
+        run: npm install -g wrangler@4.20.0
+
+      - name: Deploy to Cloudflare Workers
         uses: cloudflare/wrangler-action@v3
         with:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
